@@ -1,0 +1,6 @@
+Roger 40 40
+Bruno 20 30 15 35
+Robert 82.5
+Caroline 27.5 22.5
+Annabelle 22.7 30 40
+Sylvie 40.2 23
