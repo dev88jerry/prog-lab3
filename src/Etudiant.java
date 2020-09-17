@@ -5,6 +5,8 @@
  */
 package calculernotefinale;
 
+import java.util.Comparator;
+
 /**
  *
  * @author Jerry
@@ -13,18 +15,25 @@ public class Etudiant {
 
     private String nom;
     private double notes;
-    private boolean fail;
-
+    private boolean fail; 
+   
     /**
      * 
      * @param nNote
-     * @return 
      */
-    public double ajouteNote(double nNote) {
+    public void ajouteNote(double nNote) {
         double n = this.notes;
         n += nNote;
-        setNotes(n);
-        return n;
+        setNotes(n);        
+    }
+    
+    public void passEtu(){
+        if(this.notes > 60.0){
+            this.fail = false;
+        }
+        else{
+            this.fail = true;
+        }
     }
 
     /**
@@ -68,5 +77,5 @@ public class Etudiant {
     public void setFail(boolean f) {
         this.fail = f;
     }
-
+    
 }
