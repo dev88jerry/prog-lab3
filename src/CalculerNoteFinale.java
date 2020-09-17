@@ -28,7 +28,7 @@ public class CalculerNoteFinale {
         int failE = 0;
         int eOverAvg = 0;
 
-        String oFile = "C:/Users/Admin/Documents/NetBeansProjects/CalculerNoteFinale/notes.txt";
+        String oFile = "/NetBeansProjects/CalculerNoteFinale/notes.txt";
 
         try {
             Scanner sc = new Scanner(new File(oFile));
