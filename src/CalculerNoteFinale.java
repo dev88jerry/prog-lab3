@@ -28,8 +28,8 @@ public class CalculerNoteFinale {
         int failE = 0;
         int eOverAvg = 0;
 
-        String oFile = "/NetBeansProjects/CalculerNoteFinale/notes.txt";
-
+        //String oFile = "C:/Users/Admin/Documents/NetBeansProjects/CalculerNoteFinale/notes.txt";
+        String oFile = "notes.txt";
         try {
             Scanner sc = new Scanner(new File(oFile));
 
@@ -55,7 +55,7 @@ public class CalculerNoteFinale {
         }
 
         /*
-                Collections.sort(groupe, new Comparator(){
+        Collections.sort(groupe, new Comparator(){
             @Override
             public int compare(Object e1, Object e2){
                 return ((Etudiant)e1).getNom().compareTo(((Etudiant)e2).getNom());                
@@ -70,7 +70,7 @@ public class CalculerNoteFinale {
          */
         for (Etudiant e : groupe) {
             System.out.print("Nom: " + e.getNom());
-            System.out.print("\tNote: " + e.getNotes());
+            System.out.printf("\tNote: %.0f", e.getNotes());
             if (e.isFail()) {
                 System.out.println(" EC");
                 failE++;
@@ -84,27 +84,27 @@ public class CalculerNoteFinale {
         System.out.println("Nombre total d'etudiants: " + groupe.size());
         System.out.println("Nombre d'echecs: " + failE);
         moy = moy / groupe.size();
-        System.out.println("Moyenne du groupe: " + moy);
-        
+        System.out.printf("Moyenne du groupe: %.2f%n", moy);
+
         double tGrade = 0.0;
         double bGrade = 0.0;
-        int i=0;
+        int i = 0;
         int loc = 0;
-        for (Etudiant e : groupe){
-            if(e.getNotes() > moy){
+        for (Etudiant e : groupe) {
+            if (e.getNotes() > moy) {
                 eOverAvg++;
             }
-            
+
             tGrade = e.getNotes();
-            if(tGrade > bGrade){
+            if (tGrade > bGrade) {
                 bGrade = tGrade;
                 loc = i;
             }
-            i++;            
-        }        
-        
+            i++;
+        }
+
         System.out.println("Meilleur(e) etudiant(e): " + groupe.get(loc).getNom());
         System.out.println("Nb. d'etudiant supp. a la moyenne: " + eOverAvg);
     }
-    
+
 }
